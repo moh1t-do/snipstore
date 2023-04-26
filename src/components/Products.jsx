@@ -3,10 +3,16 @@ import Layout from './Wrapper'
 
 function Product({ products }) {
     return (
-        <Layout className="grid md:grid-cols-3 sm:grid-cols-2 gap-5 items-center justify-center">
-            {products.map((item) => (
-                <ProductCard key={item.id} title={item.title} image={item.image}/>
-            ))}
+        <Layout className="my-6">
+            <div className="grid grid-cols-1 items-center justify-center gap-4 sm:grid-cols-2 md:grid-cols-3">
+                {products.map((item) => (
+                    <ProductCard
+                        key={item.id}
+                        title={item.title}
+                        image={item.image}
+                    />
+                ))}
+            </div>
         </Layout>
     )
 }

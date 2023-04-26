@@ -11,7 +11,6 @@ function Home() {
     console.log(products);
     return (
         <>
-            <h1>Home</h1>
             <Products products={products} />
         </>
     )
