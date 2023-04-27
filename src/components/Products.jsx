@@ -7,7 +7,8 @@ function Product({ products }) {
             <div className="grid grid-cols-1 items-center justify-center gap-4 sm:grid-cols-2 md:grid-cols-3">
                 {products.map((item) => (
                     <ProductCard
-                        key={item.id}
+                        key={item._id}
+                        _id={item._id}
                         title={item.title}
                         image={item.image}
                     />

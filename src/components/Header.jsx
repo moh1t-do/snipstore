@@ -8,11 +8,15 @@ import { Link } from 'react-router-dom'
 import Menu from './Menu'
 import { useEffect, useState } from 'react'
 import MenuMobile from './MenuMobile'
+import { useSelector } from 'react-redux'
 
 function Header() {
     const [showMobileNav, handleNav] = useState(false)
     const [showNav, handleShow] = useState('translate-y-0')
     const [lastScrollY, setScrollY] = useState(0)
+
+    const productData = useSelector((state) => state.snip.productData)
+    const currQuan = useSelector((state) => state.snip.netQuantity)
 
     const controlNavbar = () => {
         if (window.scrollY > 200 && !showMobileNav) {
@@ -54,7 +58,7 @@ function Header() {
                                 <AiOutlineShoppingCart size={25} />
                             </Link>
                             <span className="absolute -right-2 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-black text-xs text-white">
-                                1
+                                {currQuan}
                             </span>
                         </div>
                     </li>
