@@ -53,7 +53,7 @@ function Header() {
                 )}
                 <ul className="flex items-center justify-center gap-8">
                     <li>
-                        <div className="relative">
+                        <div className="relative cursor-pointer">
                             <Link to="/cart">
                                 <AiOutlineShoppingCart size={25} />
                             </Link>

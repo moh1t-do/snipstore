@@ -14,7 +14,7 @@ export const snipSlice = createSlice({
             const item = state.productData.find(
                 (item) => item._id === action.payload._id
             )
-            state.netQuantity++;
+            state.netQuantity++
 
             if (item) {
                 item.quantity += action.payload.quantity
@@ -22,8 +22,17 @@ export const snipSlice = createSlice({
                 state.productData.push(action.payload)
             }
         },
-        removeFromCart: (state,action)=>{
-        }
+        removeFromCart: (state, action) => {
+            state.productData = state.productData.filter(
+                (item) => item._id !== action.payload._id
+            )
+
+            if (state.netQuantity === 0) {
+                state.netQuantity = 0
+            } else {
+                state.netQuantity--
+            }
+        },
     },
 })
 

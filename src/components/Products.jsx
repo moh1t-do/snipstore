@@ -9,7 +9,9 @@ function Product({ products }) {
                     <ProductCard
                         key={item._id}
                         _id={item._id}
+                        price={item.price}
                         title={item.title}
+                        quantity={item.quantity}
                         image={item.image}
                     />
                 ))}
