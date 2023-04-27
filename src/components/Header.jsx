@@ -44,7 +44,7 @@ function Header() {
         >
             <Layout className="relative flex justify-between">
                 <Link to="/" className="text-4xl uppercase">
-                    Shopzz
+                    Snip Store
                 </Link>
 
                 <Menu />

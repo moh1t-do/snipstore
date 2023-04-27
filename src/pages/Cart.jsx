@@ -11,6 +11,7 @@ function Cart() {
     cartData.map((item) => {
         netPrice += item.quantity * item.price
     })
+    netPrice.toPrecision(5)
     return (
         <Wrapper className="flex flex-col gap-4">
             {sz === 0 ? (
@@ -31,8 +32,15 @@ function Cart() {
                     netPrice={item.quantity * item.price}
                 />
             ))}
-            {(sz != 0) ? <CartCard title={''} quantity={totalQuantity} netPrice={netPrice} />:''}
-            
+            {sz != 0 ? (
+                <CartCard
+                    title={''}
+                    quantity={totalQuantity}
+                    netPrice={netPrice}
+                />
+            ) : (
+                ''
+            )}
         </Wrapper>
     )
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.19 54.04">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: Poppins-Regular, Poppins;
+        font-size: 37.8px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="24.1" cy="24.1" r="24.1"/>
+  <text class="cls-2" transform="translate(7.9 37.45)"><tspan x="0" y="0">M</tspan></text>
+</svg>
