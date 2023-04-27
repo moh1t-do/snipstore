@@ -5,9 +5,9 @@ import { ToastContainer, toast } from 'react-toastify'
 import { useSelector } from 'react-redux'
 import 'react-toastify/dist/ReactToastify.css'
 
-function ProductCard({ _id, title, image, price, quantity, decription }) {
-    const currQuan = useSelector((state) => state.snip.netQuantity)
+function ProductCard({ _id, title, image, price, description }) {
     const dispatch = useDispatch()
+    console.log(description)
     return (
         <>
             <div className="flex h-96 flex-col items-center justify-center border">
@@ -15,13 +15,10 @@ function ProductCard({ _id, title, image, price, quantity, decription }) {
                 <div className="py-2">
                     <ul>
                         <li>
-                            <h1 className='font-bold'>{title}</h1>
+                            <h1 className="font-bold">{title}</h1>
                         </li>
-                        <li>
-                            PRICE : {price}
-                        </li>
+                        <li>PRICE : {price}</li>
                     </ul>
-
                 </div>
                 <div className="flex gap-4">
                     <button
@@ -34,7 +31,7 @@ function ProductCard({ _id, title, image, price, quantity, decription }) {
                                     image: image,
                                     price: price,
                                     quantity: 1,
-                                    decription: decription,
+                                    description: description,
                                 })
                             ) &&
                                 toast.success(`${title} added to cart`, {
@@ -54,24 +51,23 @@ function ProductCard({ _id, title, image, price, quantity, decription }) {
                     <button
                         onClick={() => {
                             dispatch(
-                                removeFromCart(
-                                    removeFromCart({
-                                        _id: _id,
-                                    })
-                                )
-                            )
-                            if (currQuan > 0) {
-                                toast.warn(`${title} removed from cart`, {
-                                    position: 'bottom-left',
-                                    autoClose: 1000,
-                                    hideProgressBar: false,
-                                    closeOnClick: true,
-                                    pauseOnHover: true,
-                                    draggable: true,
-                                    progress: undefined,
-                                    theme: 'light',
+                                removeFromCart({
+                                    _id: _id,
+                                    quantity: 1,
                                 })
-                            }
+                            )
+                            // if (true) {
+                            //     toast.warn(`${title} removed from cart`, {
+                            //         position: 'bottom-left',
+                            //         autoClose: 1000,
+                            //         hideProgressBar: false,
+                            //         closeOnClick: true,
+                            //         pauseOnHover: true,
+                            //         draggable: true,
+                            //         progress: undefined,
+                            //         theme: 'light',
+                            //     })
+                            // }
                         }}
                     >
                         <CiCircleRemove size="30px" className="text-red-500" />

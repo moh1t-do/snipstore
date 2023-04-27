@@ -12,6 +12,7 @@ function Product({ products }) {
                         price={item.price}
                         title={item.title}
                         quantity={item.quantity}
+                        description={item.description}
                         image={item.image}
                     />
                 ))}

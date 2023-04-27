@@ -3,15 +3,17 @@ import Wrapper from '../components/Wrapper'
 import CartCard from '../components/CartCard'
 function Cart() {
     const cartData = useSelector((state) => state.snip.productData)
-    const totalQuantity = useSelector((state) => state.snip.netQuantity)
 
     let sz = cartData.length
 
-    let netPrice = 0
+    let netPrice, netQuantity
+    netPrice = netQuantity = 0
     cartData.map((item) => {
+        netQuantity += item.quantity
         netPrice += item.quantity * item.price
     })
     netPrice.toPrecision(5)
+
     return (
         <Wrapper className="flex flex-col gap-4">
             {sz === 0 ? (
@@ -19,7 +21,7 @@ function Cart() {
             ) : (
                 <CartCard
                     title={'Product'}
-                    quantity={'Qunatity'}
+                    quantity={'Quantity'}
                     netPrice={'Net Price'}
                 />
             )}
@@ -35,7 +37,7 @@ function Cart() {
             {sz != 0 ? (
                 <CartCard
                     title={''}
-                    quantity={totalQuantity}
+                    quantity={netQuantity}
                     netPrice={netPrice}
                 />
             ) : (

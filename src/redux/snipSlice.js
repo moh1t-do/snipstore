@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     productData: [],
-    netQuantity: 0,
     useInfo: null,
 }
 
@@ -14,7 +13,6 @@ export const snipSlice = createSlice({
             const item = state.productData.find(
                 (item) => item._id === action.payload._id
             )
-            state.netQuantity++
 
             if (item) {
                 item.quantity += action.payload.quantity
@@ -23,14 +21,16 @@ export const snipSlice = createSlice({
             }
         },
         removeFromCart: (state, action) => {
-            state.productData = state.productData.filter(
-                (item) => item._id !== action.payload._id
+            const item = state.productData.find(
+                (item) => item._id === action.payload._id
             )
-
-            if (state.netQuantity === 0) {
-                state.netQuantity = 0
-            } else {
-                state.netQuantity--
+            if (item) {
+                if (item.quantity != 1) item.quantity -= action.payload.quantity
+                else {
+                    state.productData = state.productData.filter((item) => {
+                        return item._id != action.payload._id
+                    })
+                }
             }
         },
     },

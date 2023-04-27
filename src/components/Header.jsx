@@ -16,7 +16,11 @@ function Header() {
     const [lastScrollY, setScrollY] = useState(0)
 
     const productData = useSelector((state) => state.snip.productData)
-    const currQuan = useSelector((state) => state.snip.netQuantity)
+    console.log(productData)
+    let totalProducts = 0;
+    for (let i = 0; i < productData.length; i++) {
+        totalProducts += productData[i].quantity;
+    }
 
     const controlNavbar = () => {
         if (window.scrollY > 200 && !showMobileNav) {
@@ -58,7 +62,7 @@ function Header() {
                                 <AiOutlineShoppingCart size={25} />
                             </Link>
                             <span className="absolute -right-2 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-black text-xs text-white">
-                                {currQuan}
+                                {totalProducts}
                             </span>
                         </div>
                     </li>
