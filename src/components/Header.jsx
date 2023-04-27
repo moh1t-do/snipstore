@@ -47,7 +47,7 @@ function Header() {
             className={`sticky top-0 z-20 w-full  bg-white py-1 shadow-md ${showNav} transition-transform duration-300`}
         >
             <Layout className="relative flex justify-between">
-                <Link to="/" className="text-4xl uppercase">
+                <Link to="/" className="md:text-4xl uppercase text-2xl">
                     Snip Store
                 </Link>
 

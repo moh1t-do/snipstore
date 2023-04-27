@@ -7,7 +7,8 @@ import 'react-toastify/dist/ReactToastify.css'
 
 function ProductCard({ _id, title, image, price, description }) {
     const dispatch = useDispatch()
-    console.log(description)
+    const getCartData = useSelector((state) => state.snip.productData)
+    const data = getCartData.find((item) => item._id == _id)
     return (
         <>
             <div className="flex h-96 flex-col items-center justify-center border">
@@ -56,18 +57,18 @@ function ProductCard({ _id, title, image, price, description }) {
                                     quantity: 1,
                                 })
                             )
-                            // if (true) {
-                            //     toast.warn(`${title} removed from cart`, {
-                            //         position: 'bottom-left',
-                            //         autoClose: 1000,
-                            //         hideProgressBar: false,
-                            //         closeOnClick: true,
-                            //         pauseOnHover: true,
-                            //         draggable: true,
-                            //         progress: undefined,
-                            //         theme: 'light',
-                            //     })
-                            // }
+                            if (data) {
+                                toast.warn(`${title} removed from cart`, {
+                                    position: 'bottom-left',
+                                    autoClose: 1000,
+                                    hideProgressBar: false,
+                                    closeOnClick: true,
+                                    pauseOnHover: true,
+                                    draggable: true,
+                                    progress: undefined,
+                                    theme: 'light',
+                                })
+                            }
                         }}
                     >
                         <CiCircleRemove size="30px" className="text-red-500" />
