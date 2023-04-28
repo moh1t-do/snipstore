@@ -4,6 +4,7 @@ import {
     AiOutlineAlignRight,
     AiOutlineClose,
 } from 'react-icons/ai'
+import { CgProfile } from 'react-icons/cg'
 import { Link } from 'react-router-dom'
 import Menu from './Menu'
 import { useEffect, useState } from 'react'
@@ -17,9 +18,9 @@ function Header() {
 
     const productData = useSelector((state) => state.snip.productData)
     console.log(productData)
-    let totalProducts = 0;
+    let totalProducts = 0
     for (let i = 0; i < productData.length; i++) {
-        totalProducts += productData[i].quantity;
+        totalProducts += productData[i].quantity
     }
 
     const controlNavbar = () => {
@@ -47,8 +48,8 @@ function Header() {
             className={`sticky top-0 z-20 w-full  bg-white py-1 shadow-md ${showNav} transition-transform duration-300`}
         >
             <Layout className="relative flex justify-between">
-                <Link to="/" className="md:text-4xl uppercase text-2xl">
-                    Snip Store
+                <Link to="/" className="text-xl uppercase">
+                    Fake Store
                 </Link>
 
                 <Menu />
@@ -65,6 +66,11 @@ function Header() {
                                 {totalProducts}
                             </span>
                         </div>
+                    </li>
+                    <li>
+                        <Link to="/">
+                            <CgProfile size={25} />
+                        </Link>
                     </li>
 
                     <li className="md:hidden">
