@@ -1,6 +1,7 @@
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Home from './pages/Home'
+import Login from './components/Login'
 import Cart from './pages/Cart'
 import {
     createBrowserRouter,
@@ -28,7 +29,11 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: productsData
+                loader: productsData,
+            },
+            {
+                path: '/login',
+                element: <Login />,
             },
             {
                 path: '/cart',

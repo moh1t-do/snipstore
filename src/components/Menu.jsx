@@ -3,10 +3,11 @@ function Menu() {
     return (
         <ul className="hidden items-center justify-center gap-8 md:flex">
             <Link to="/">Home</Link>
-            <Link>Pages</Link>
-            <Link>Shop</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/login">Register</Link>
+            {/* <Link>Shop</Link>
             <Link>Elements</Link>
-            <Link>Blog</Link>
+            <Link>Blog</Link> */}
         </ul>
     )
 }
