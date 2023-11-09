@@ -17,15 +17,6 @@ function MenuMobile({ handleNav }) {
                     Register
                 </Link>
             </li>
-            {/* <li className="border-b py-3">
-                <Link onClick={() => handleNav(false)}>Shop</Link>
-            </li>
-            <li className="border-b py-3">
-                <Link onClick={() => handleNav(false)}>Elements</Link>
-            </li>
-            <li className="border-b py-3">
-                <Link onClick={() => handleNav(false)}>Blog</Link>
-            </li> */}
         </ul>
     )
 }

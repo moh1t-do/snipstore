@@ -7,7 +7,6 @@ import {
     createBrowserRouter,
     Outlet,
     RouterProvider,
-    ScrollRestoration,
 } from 'react-router-dom'
 import { productsData } from './api/api'
 

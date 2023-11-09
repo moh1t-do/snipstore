@@ -9,13 +9,6 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // console.log('form submitted')
-        // console.log({ email, password })
-        // const payload = {
-        //     email: 'agrawal.ayush2500@gmail.com',
-        //     password: 'SomePass5',
-        // }
-
         const payload = {
             email: email,
             password: password,

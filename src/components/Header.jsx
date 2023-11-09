@@ -49,7 +49,7 @@ function Header() {
         >
             <Layout className="relative flex justify-between">
                 <Link to="/" className="text-xl uppercase">
-                    Fake Store
+                    Snip Store
                 </Link>
 
                 <Menu />
