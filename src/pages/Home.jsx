@@ -8,7 +8,6 @@ function Home() {
     useEffect(() => {
         setProducts(data.data)
     }, [data])
-    console.log(products);
     return (
         <>
             <Products products={products} />
